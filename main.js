@@ -44,7 +44,7 @@ function myCallback() {
 		}
 		// exportToCsv('Taxonomies.csv', cars);
 		const mat = [
-			[, '1. Remember', , "2. Understand", , "3. Apply", , "4. Analyze", , "5. Evaluate", ,],
+			["", '1. Remember', "", "2. Understand", "", "3. Apply", , "4. Analyze", "", "5. Evaluate", "", ""],
 			['Objective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]
 		];
 		const LOs = getUniqueElements(cars, 4);
@@ -64,7 +64,22 @@ function myCallback() {
 			matarr.push(0);
 			mat.push(matarr);
 		}
-		mat.push(["Total", , 0, , 0, , 0, , 0, , 0, 0])
+		// Compute the row totals
+		for (var i = 2; i < mat.length; i++) {
+			const rowTotal = mat[i][2] + mat[i][4] + mat[i][6] + mat[i][8] + mat[i][10];
+			mat[i][11] = rowTotal;
+		}
+		columnTotals = ["Total"];
+		for (let j = 0; j < 5; j++) {
+			var sum = 0;
+			for (var i = 2; i < mat.length; i++) {
+				sum += parseInt(mat[i][(j * 2) + 2]);
+			}
+			columnTotals.push("");
+			columnTotals.push(sum);
+		}
+		columnTotals.push(columnTotals[2] + columnTotals[4] + columnTotals[6] + columnTotals[8] + columnTotals[10])
+		mat.push(columnTotals);
 		exportToCsv('AssessmentMatrix.csv', mat);
 	}
 	document.body.style.zoom = 1;
