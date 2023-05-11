@@ -1,3 +1,7 @@
+body {
+    border-radius: 10px;
+}
+
 button {
 	display: block;
 	width: 140px;
@@ -6,16 +10,17 @@ button {
 	font-size: 10px;
 	font-weight: bold;
 	border-radius: 5px;
-	border: 2px solid #007aff;
+	border: 1px solid #000000;
 	background-color: #fff;
-	color: #007aff;
+	color: #000000;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
+	text-align: left;
 }
 
 button:hover {
-	background-color: #007aff;
-	color: #fff;
+	background-color: #d77039;
+	color: #ffffff;
 }
 
 button:focus {

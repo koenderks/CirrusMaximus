@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "Cirrus Web Scraper",
-	"description": "Browser extension to scrape Cirrus web pages and aggregate the data into an assessment matrix according to the taxonomy of Bloom.",
+	"description": "Scrape Cirrus web pages and aggregate collections into an assessment matrix according to the taxonomy of Bloom.",
 	"version": "1.0",
 	"permissions": [
 		"scripting"
