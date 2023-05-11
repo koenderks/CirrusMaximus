@@ -1,18 +1,24 @@
-html,
-body {
-  width: 200;
+button {
+	display: block;
+	width: 200px;
+	margin-bottom: 5px;
+	padding: 5px;
+	font-size: 10px;
+	font-weight: bold;
+	border-radius: 5px;
+	border: 2px solid #007aff;
+	background-color: #fff;
+	color: #007aff;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 
-.button {
-	border-radius: 25px;
-  width: 150px;
-  padding: 4px;
-  font-size: 1em;
-  text-align: center;
-  cursor: pointer;
+button:hover {
+	background-color: #007aff;
+	color: #fff;
 }
 
-.button:hover {
-  background-color: #3870e0;
-  color: #ffffff
+button:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.4);
 }

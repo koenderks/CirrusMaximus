@@ -15,6 +15,11 @@ getCurrentTab = async () => {
 	return tab;
 }
 
-getCurrentTab().then((tab) => {
-	injectContentScript(tab)
-})
+document.addEventListener("DOMContentLoaded", () => {
+	const myButton = document.getElementById("matrixButton");
+	myButton.addEventListener("click", () => {
+	  getCurrentTab().then((tab) => {
+		injectContentScript(tab)
+	  })
+	});
+  });

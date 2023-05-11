@@ -17,13 +17,11 @@ function getUniqueElements(arr, colIndex) {
 	return Array.from(uniqueElements);
 }
 
-
-
 function myCallback() {
 	var rows = document.getElementsByClassName('MuiDataGrid-row');
 	var elements = document.getElementsByClassName('MuiDataGrid-cellContent');
 	var spans = document.getElementsByClassName('css-j7qwjs');
-	if (elements.length > 0) {
+	if (elements.length > 0 && rows.length > 0) {
 		const cars = [
 			['Question', 'ID', 'Type', "Points", "Taxonomy", "Objective"]
 		];
@@ -44,19 +42,33 @@ function myCallback() {
 			}
 			cars.push(arr);
 		}
-		exportToCsv('Taxonomies.csv', cars);
+		// exportToCsv('Taxonomies.csv', cars);
 		const mat = [
-			[, 'Remember', , "Understand", , "Apply", , "Analyze", , "Evaluate", ,],
+			[, '1. Remember', , "2. Understand", , "3. Apply", , "4. Analyze", , "5. Evaluate", ,],
 			['Objective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]
 		];
 		const LOs = getUniqueElements(cars, 4);
 		LOs.splice(0, 2);
 		for (var i = 0; i < LOs.length; i++) {
-			mat.push([LOs[i], , 0, , 0, , 0, , 0, , 0,])
+			matarr = [LOs[i]];
+			for (var j = 0; j < 5; j++) {
+				const pointsSum = cars.reduce((acc, curr) => {
+					console.log(curr)
+					if (curr[4] === LOs[i]) {
+						acc += parseInt(curr[3]);
+					}
+					return acc;
+				}, 0);
+				matarr.push("");
+				matarr.push(pointsSum);
+			}
+			matarr.push(0);
+			mat.push(matarr);
 		}
+		mat.push(["Total", , 0, , 0, , 0, , 0, , 0, 0])
 		exportToCsv('AssessmentMatrix.csv', mat);
-		document.body.style.zoom = 1;
 	}
+	document.body.style.zoom = 1;
 }
 
 function main() {
