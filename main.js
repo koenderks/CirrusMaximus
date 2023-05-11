@@ -52,13 +52,19 @@ function myCallback() {
 		for (var i = 0; i < LOs.length; i++) {
 			matarr = [LOs[i]];
 			for (var j = 0; j < 5; j++) {
+				const qString = cars.reduce((acc, curr) => {
+					if (curr[4] === LOs[i] && curr[5] == mat[0][(j * 2) + 1]) {
+						acc += curr[1] + ", ";
+					}
+					return acc;
+				}, "");
 				const pointsSum = cars.reduce((acc, curr) => {
 					if (curr[4] === LOs[i] && curr[5] == mat[0][(j * 2) + 1]) {
 						acc += parseInt(curr[3]);
 					}
 					return acc;
 				}, 0);
-				matarr.push("");
+				matarr.push(qString);
 				matarr.push(pointsSum);
 			}
 			matarr.push(0);
