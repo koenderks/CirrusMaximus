@@ -53,8 +53,7 @@ function myCallback() {
 			matarr = [LOs[i]];
 			for (var j = 0; j < 5; j++) {
 				const pointsSum = cars.reduce((acc, curr) => {
-					console.log(curr)
-					if (curr[4] === LOs[i]) {
+					if (curr[4] === LOs[i] && curr[5] == mat[0][(j * 2) + 1]) {
 						acc += parseInt(curr[3]);
 					}
 					return acc;
