@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
-	"name": "Cirrus Assessment Matrix",
-	"description": "Extension to aggregate Cirrus exams into an assessment matrix.",
+	"name": "Cirrus Web Scraper",
+	"description": "Browser extension to scrape Cirrus web pages and aggregate the data into an assessment matrix according to the taxonomy of Bloom.",
 	"version": "1.0",
 	"permissions": [
 		"scripting"
@@ -10,7 +10,7 @@
 		"https://*.cirrusplatform.com/*"
 	],
 	"action": {
-		"default_title": "Export assessment matrix",
+		"default_title": "Cirrus Web Scraper",
 		"default_popup": "popup.html",
 		"default_icon": "images/icon-32.png"
 	},
