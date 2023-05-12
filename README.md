@@ -4,7 +4,7 @@
 
 ## Installation
 
-You can download the development version of **Cirrus Maximus** as follows:
+You can download **Cirrus Maximus** as follows:
 
 1. Click the green `<> Code` button in the top-right and click `Download ZIP` (see image below). Next, unpack the folder somewhere on your computer.
 
