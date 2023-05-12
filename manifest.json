@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
-	"name": "Cirrus Web Scraper",
-	"description": "Scrape Cirrus web pages and aggregate collections into an assessment matrix according to the taxonomy of Bloom.",
+	"name": "Cirrus Maximus",
+	"description": "Scrape and extract data from the Cirrus assessment platform with ease.",
 	"version": "1.0",
 	"permissions": [
 		"scripting"

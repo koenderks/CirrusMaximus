@@ -10,12 +10,12 @@ button {
 	font-size: 10px;
 	font-weight: bold;
 	border-radius: 5px;
-	border: 1px solid #000000;
-	background-color: #fff;
+	border: 0px solid #000000;
+	background-color: #d8d9e3;
 	color: #000000;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
-	text-align: left;
+	text-align: center;
 }
 
 button:hover {
