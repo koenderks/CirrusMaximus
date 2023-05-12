@@ -1,6 +1,6 @@
 # Cirrus Maximus <img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/icon.svg' width='149' height='173' align='right'/>
 
-**Cirrus Maximus** is a browser extension that allows you to effortlessly gather and extract data and assessment matrices from the [Cirrus](https://cirrusassessment.com) online testing platform.
+**Cirrus Maximus** is a browser extension that allows you to scrape and extract data from the [Cirrus](https://cirrusassessment.com) online testing platform.
 
 ## Installation
 
