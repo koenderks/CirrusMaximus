@@ -56,7 +56,7 @@ See the sections below for the next steps depending on your browser.
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme2.png' width = "50%"/>
 </p>
 
-4. Upon selecting an option, a `.csv` file will be downloaded to your computer, containing the extracted data or assessment matrix. The example output below is generated using the `Create Assessment Matrix` option.
+4. Upon selecting one of the two options, a `.csv` file will be downloaded to your computer, containing the extracted form or collection data or the assessment matrix. The example output below is generated using the `Export assessment matrix` option.
 
 <p align="center">
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme3.png' width = "100%"/>
