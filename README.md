@@ -17,7 +17,7 @@ You can download the development version of **Cirrus Maximus** as follows:
 <details>
 <summary><b>Microsoft Edge</b></summary>
 
-2. Open your Chrome browser and navigate to `edge://extensions`.
+2. Open your Edge browser and navigate to `edge://extensions`.
 
 3. Enable Developer mode in the bottom-left corner and select `Load Unpacked`.
 
