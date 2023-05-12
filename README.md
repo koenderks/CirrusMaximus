@@ -48,7 +48,7 @@ See the sections below for the next steps depending on your browser.
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme1.png' width = "50%"/>
 </p>
 
-2. Go to the Cirrus website and select a collection.
+2. Go to the Cirrus website and navigate into an existing form or collection.
 
 3. Click on the Cirrus Maximus icon in your toolbar.
 
