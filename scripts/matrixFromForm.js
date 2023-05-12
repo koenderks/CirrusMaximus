@@ -1,4 +1,4 @@
-function runMatrixFromForm() {
+function getMatrixFromForm() {
 	const numbers = document.getElementsByClassName("indexColumn-13-gt");
 	const titles = document.getElementsByClassName("questionHeader-2NdOd");
 	const ids = document.getElementsByClassName("idColumn-1yKKe");
@@ -64,4 +64,4 @@ function runMatrixFromForm() {
 	}
 }
 
-runMatrixFromForm();
+getMatrixFromForm();

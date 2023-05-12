@@ -29,9 +29,9 @@ function dataFromCollection() {
 	document.body.style.zoom = 1;
 }
 
-function runDataFromCollection() {
+function getDataFromCollection() {
 	document.body.style.zoom = 0.1;
 	setTimeout(dataFromCollection, 100);
 }
 
-runDataFromCollection();
+getDataFromCollection();

@@ -76,9 +76,9 @@ function matrixFromCollection() {
 	document.body.style.zoom = 1;
 }
 
-function runMatrixFromCollection() {
+function getMatrixFromCollection() {
 	document.body.style.zoom = 0.1;
 	setTimeout(matrixFromCollection, 100);
 }
 
-runMatrixFromCollection();
+getMatrixFromCollection();
