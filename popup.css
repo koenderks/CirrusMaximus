@@ -1,5 +1,16 @@
+.header {
+	display: flex;
+	align-items: center;
+}
+
+.header img {
+	margin-right: 10px;
+	width: 32px;
+	height: 32px;
+}
+
 body {
-    border-radius: 10px;
+	border-radius: 10px;
 }
 
 button {
@@ -19,11 +30,7 @@ button {
 }
 
 button:hover {
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 1);
 	background-color: #d77039;
 	color: #ffffff;
-}
-
-button:focus {
-	outline: none;
-	box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.4);
 }
