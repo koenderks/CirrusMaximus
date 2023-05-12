@@ -15,17 +15,21 @@ You can download the development version of **Cirrus Maximus** as follows:
 ## Usage
 
 1. Pin the extension to your browser's toolbar by clicking on the extension icon.
-<p>
-<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme1.png' width = "50%"/>
+
+<p align="center">
+	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme1.png' width = "50%"/>
 </p>
 
 2. Go to the Cirrus website and select a collection.
 
-2. Click on the Cirrus Maximus icon in your toolbar.
-<p>
-<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme2.png' width = "50%"/>
+3. Click on the Cirrus Maximus icon in your toolbar.
+
+<p align="center">
+	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme2.png' width = "50%"/>
 </p>
-3. Upon selecting an option, a `.csv` file will be downloaded to your computer, containing the extracted data or assessment matrix. The example output below is generated using the `Create Assessment Matrix` option.
-<p>
-<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme3.png' width = "50%"/>
+
+4. Upon selecting an option, a `.csv` file will be downloaded to your computer, containing the extracted data or assessment matrix. The example output below is generated using the `Create Assessment Matrix` option.
+
+<p align="center">
+	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme3.png' width = "50%"/>
 </p>
