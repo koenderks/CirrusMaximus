@@ -6,11 +6,15 @@
 
 You can download the development version of **Cirrus Maximus** as follows:
 
-- Download and unzip the repository folder on your computer.
+- Download this repo as a ZIP-file (see image below) and unzip on your computer.
 - Open your Chrome browser and navigate to `chrome://extensions`.
 - Enable Developer mode in the top-right corner and select `Load unpacked`.
 - Browse to the local folder that contains the extension's code and click `Ok`.
 - If there are no errors, the `Cirrus Maximus` extension will load automatically into your browser.
+
+<p align="center">
+	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme0.png' width = "50%"/>
+</p>
 
 ## Usage
 
