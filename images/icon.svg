@@ -12,6 +12,9 @@
    version="1.1"
    sodipodi:docname="icon.svg"
    inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   inkscape:export-filename="icon-128.png"
+   inkscape:export-xdpi="18.400928"
+   inkscape:export-ydpi="18.400928"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -28,9 +31,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.295"
-     inkscape:cx="250.84746"
-     inkscape:cy="400"
+     inkscape:zoom="0.587431"
+     inkscape:cx="388.98186"
+     inkscape:cy="469.84242"
      inkscape:window-width="1512"
      inkscape:window-height="832"
      inkscape:window-x="0"
@@ -38,11 +41,30 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="denarius-circle" />
   <circle
-     id="primary"
-     cx="12"
-     cy="12"
-     r="10"
-     style="fill: rgb(0, 0, 0);" />
+     id="primary-1"
+     cx="12.00001"
+     cy="12.060008"
+     style="fill:#000000;fill-opacity:1;stroke-width:1"
+     r="10.000005" />
+  <path
+     id="primary-1-2"
+     style="fill:#d77039;fill-opacity:1;stroke-width:1.00936"
+     sodipodi:type="arc"
+     sodipodi:cx="16.96866"
+     sodipodi:cy="-0.031283092"
+     sodipodi:rx="10.059859"
+     sodipodi:ry="10.018997"
+     sodipodi:start="0.015021609"
+     sodipodi:end="4.7732237"
+     sodipodi:arc-type="slice"
+     d="M 27.027385,0.11921271 A 10.059859,10.018997 0 0 1 20.571021,9.3233152 10.059859,10.018997 0 0 1 9.5906482,6.779485 10.059859,10.018997 0 0 1 7.8759205,-4.3176195 10.059859,10.018997 0 0 1 17.580272,-10.031747 L 16.96866,-0.03128309 Z"
+     transform="matrix(0.70418728,0.71001428,-0.70516749,0.70904077,0,0)" />
+  <circle
+     id="primary-1-0"
+     cx="12.108214"
+     cy="11.963207"
+     style="fill:#000000;fill-opacity:1;stroke-width:0.826"
+     r="8.260005" />
   <path
      id="secondary"
      d="M14,13h1a1,1,0,0,0,0-2H14l1.8-2.4a1,1,0,0,0-1.6-1.2L12,10.33,9.8,7.4A1,1,0,0,0,8.2,8.6L10,11H9a1,1,0,0,0,0,2h1L8.2,15.4a1,1,0,1,0,1.6,1.2L12,13.67l2.2,2.93a1,1,0,0,0,.8.4,1,1,0,0,0,.6-.2,1,1,0,0,0,.2-1.4Z"
