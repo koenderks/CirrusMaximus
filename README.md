@@ -31,5 +31,5 @@ You can download the development version of **Cirrus Maximus** as follows:
 4. Upon selecting an option, a `.csv` file will be downloaded to your computer, containing the extracted data or assessment matrix. The example output below is generated using the `Create Assessment Matrix` option.
 
 <p align="center">
-	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme3.png' width = "50%"/>
+	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme3.png' width = "100%"/>
 </p>
