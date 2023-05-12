@@ -23,7 +23,7 @@ injectMatrixFromCollectionScript = (tab) => {
 	chrome.scripting.executeScript(
 		{
 			target: { tabId: id, allFrames: true },
-			files: ['common.js', 'matrixFromCollection.js']
+			files: ['./scripts/common.js', './scripts/matrixFromCollection.js']
 		}
 	)
 }
@@ -33,7 +33,7 @@ injectMatrixFromFormScript = (tab) => {
 	chrome.scripting.executeScript(
 		{
 			target: { tabId: id, allFrames: true },
-			files: ['common.js', 'matrixFromForm.js']
+			files: ['./scripts/common.js', './scripts/matrixFromForm.js']
 		}
 	)
 }
@@ -43,7 +43,7 @@ injectDataFromCollectionScript = (tab) => {
 	chrome.scripting.executeScript(
 		{
 			target: { tabId: id, allFrames: true },
-			files: ['common.js', 'dataFromCollection.js']
+			files: ['./scripts/common.js', './scripts/dataFromCollection.js']
 		}
 	)
 }
@@ -53,7 +53,7 @@ injectDataFromFormScript = (tab) => {
 	chrome.scripting.executeScript(
 		{
 			target: { tabId: id, allFrames: true },
-			files: ['common.js', 'dataFromForm.js']
+			files: ['./scripts/common.js', './scripts/dataFromForm.js']
 		}
 	)
 }
