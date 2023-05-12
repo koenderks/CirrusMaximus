@@ -1,4 +1,4 @@
-function dataFromForm() {
+function runDataFromForm() {
 	// Create a summary of the collection
 	const numbers = document.getElementsByClassName("indexColumn-13-gt");
 	const titles = document.getElementsByClassName("questionHeader-2NdOd");
@@ -17,12 +17,6 @@ function dataFromForm() {
 		}
 		exportToCsv('FormData.csv', aggregated);
 	}
-	document.body.style.zoom = 1;
-}
-
-function runDataFromForm() {
-	document.body.style.zoom = 0.1;
-	setTimeout(dataFromForm, 100);
 }
 
 runDataFromForm()

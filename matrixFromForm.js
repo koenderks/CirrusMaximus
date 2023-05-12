@@ -1,4 +1,4 @@
-function matrixFromForm() {
+function runMatrixFromForm() {
 	// Create a summary of the collection
 	const numbers = document.getElementsByClassName("indexColumn-13-gt");
 	const titles = document.getElementsByClassName("questionHeader-2NdOd");
@@ -64,12 +64,6 @@ function matrixFromForm() {
 		assmat.push(columnTotals);
 		exportToCsv('FormAssessmentMatrix.csv', assmat);
 	}
-	document.body.style.zoom = 1;
-}
-
-function runMatrixFromForm() {
-	document.body.style.zoom = 0.1;
-	setTimeout(matrixFromForm, 100);
 }
 
 runMatrixFromForm()
