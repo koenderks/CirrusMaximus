@@ -1,12 +1,20 @@
 // Check the current url and hide elements accordingly
 chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
 	var currentUrl = tabs[0].url;
-	if (currentUrl.includes("cirrusplatform.com/author/app#/library/collections")) {
-		const par = document.getElementById("status");
+	const par = document.getElementById("status");
+	if (currentUrl.includes("cirrusplatform.com/author/app#/library/collections/")) {
 		par.innerHTML = "Status: <b style='color: green;'>Active</b>";
-	} else {
-		const buttons = document.querySelectorAll(".my-button");
+		const buttons = document.querySelectorAll(".form-button");
 		buttons.forEach(button => button.classList.add("hidden"));
+	} else if (currentUrl.includes("cirrusplatform.com/author/app#/assessments/item/")) {
+		par.innerHTML = "Status: <b style='color: green;'>Active</b>";
+		const buttons = document.querySelectorAll(".collection-button");
+		buttons.forEach(button => button.classList.add("hidden"));
+	} else {
+		const collectionButtons = document.querySelectorAll(".collection-button");
+		collectionButtons.forEach(button => button.classList.add("hidden"));
+		const formButtons = document.querySelectorAll(".form-button");
+		formButtons.forEach(button => button.classList.add("hidden"));
 	}
 });
 
@@ -40,15 +48,15 @@ getCurrentChromeTab = async () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 	// Inject script to create assessment matrix on click
-	const matrixButton = document.getElementById("matrixButton");
-	matrixButton.addEventListener("click", () => {
+	const collectionMatrixButton = document.getElementById("collectionMatrixButton");
+	collectionMatrixButton.addEventListener("click", () => {
 		getCurrentChromeTab().then((tab) => {
 			injectMatrixFromCollectionScript(tab)
 		})
 	});
 	// Inject script to extract data on click
-	const dataButton = document.getElementById("dataButton");
-	dataButton.addEventListener("click", () => {
+	const collectionDataButton = document.getElementById("collectionDataButton");
+	collectionDataButton.addEventListener("click", () => {
 		getCurrentChromeTab().then((tab) => {
 			injectDataFromCollectionScript(tab)
 		})
