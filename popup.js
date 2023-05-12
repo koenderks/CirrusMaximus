@@ -40,6 +40,17 @@ injectDataFromCollectionScript = (tab) => {
 	console.log(`Loading: ${url}`);
 }
 
+injectDataFromFormScript = (tab) => {
+	const { id, url } = tab;
+	chrome.scripting.executeScript(
+		{
+			target: { tabId: id, allFrames: true },
+			files: ['common.js', 'dataFromForm.js']
+		}
+	)
+	console.log(`Loading: ${url}`);
+}
+
 getCurrentChromeTab = async () => {
 	let queryOptions = { active: true };
 	let [tab] = await chrome.tabs.query(queryOptions);
@@ -47,18 +58,25 @@ getCurrentChromeTab = async () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-	// Inject script to create assessment matrix on click
+	// Inject script to create assessment matrix from collection on click
 	const collectionMatrixButton = document.getElementById("collectionMatrixButton");
 	collectionMatrixButton.addEventListener("click", () => {
 		getCurrentChromeTab().then((tab) => {
 			injectMatrixFromCollectionScript(tab)
 		})
 	});
-	// Inject script to extract data on click
+	// Inject script to extract collection data on click
 	const collectionDataButton = document.getElementById("collectionDataButton");
 	collectionDataButton.addEventListener("click", () => {
 		getCurrentChromeTab().then((tab) => {
 			injectDataFromCollectionScript(tab)
+		})
+	});
+	// Inject script to extract form data on click
+	const formDataButton = document.getElementById("formDataButton");
+	formDataButton.addEventListener("click", () => {
+		getCurrentChromeTab().then((tab) => {
+			injectDataFromFormScript(tab)
 		})
 	});
 });

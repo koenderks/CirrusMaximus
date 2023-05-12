@@ -67,7 +67,7 @@ function matrixFromCollection() {
 		}
 		columnTotals.push(columnTotals[2] + columnTotals[4] + columnTotals[6] + columnTotals[8] + columnTotals[10])
 		assmat.push(columnTotals);
-		exportToCsv('AssessmentMatrix.csv', assmat);
+		exportToCsv('CollectionAssessmentMatrix.csv', assmat);
 	}
 	document.body.style.zoom = 1;
 }
