@@ -6,7 +6,7 @@
 
 You can download **Cirrus Maximus** as follows:
 
-1. Click the green `<> Code` button in the top-right and click `Download ZIP` (see image below). Next, unpack the folder somewhere on your computer.
+1. Click the green `<> Code` button in the top-right of this page and click `Download ZIP` (see image below). Next, unpack the folder somewhere on your computer.
 
 <p align="center">
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme0.png' width = "25%"/>
