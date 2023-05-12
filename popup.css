@@ -9,8 +9,12 @@
 	height: 32px;
 }
 
+.hidden {
+	display: none;
+}
+
 body {
-	border-radius: 10px;
+	width: 140px;
 }
 
 button {

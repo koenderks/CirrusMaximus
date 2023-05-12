@@ -4,7 +4,8 @@
 	"description": "Scrape and extract data from the Cirrus assessment platform with ease.",
 	"version": "1.0",
 	"permissions": [
-		"scripting"
+		"scripting",
+		"tabs"
 	],
 	"host_permissions": [
 		"https://*.cirrusplatform.com/*"
