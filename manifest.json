@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "Cirrus Maximus",
-	"description": "Scrape and extract data from the Cirrus assessment platform with ease.",
+	"description": "Gather and extract data and assessment matrices from the Cirrus online testing platform.",
 	"version": "1.0",
 	"permissions": [
 		"scripting",
