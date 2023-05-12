@@ -12,7 +12,7 @@ You can download the development version of **Cirrus Maximus** as follows:
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme0.png' width = "25%"/>
 </p>
 
-### Browsers
+See the sections below for the next steps depending on your browser.
 
 <details>
 <summary><b>Microsoft Edge</b></summary>
