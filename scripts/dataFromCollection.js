@@ -4,7 +4,7 @@ function dataFromCollection() {
 	var numericCells = document.getElementsByClassName('MuiDataGrid-cellContent');
 	var stringCells = document.getElementsByClassName('css-j7qwjs');
 	if (numericCells.length > 0 && rows.length > 0) {
-		const aggregated = [['Number', 'Title', 'ID', 'Type', "Score", "Taxonomy", "LearningObjective"]];
+		const aggregated = [['Number', 'Title', 'ID', 'Type', "Score", "LearningObjective", "Taxonomy"]];
 		var numericIndex = 0;
 		var stringIndex = 0;
 		for (let i = 0; i < rows.length; i++) {
