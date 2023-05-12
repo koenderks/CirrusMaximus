@@ -11,7 +11,7 @@
 		"https://*.cirrusplatform.com/*"
 	],
 	"action": {
-		"default_title": "Cirrus Web Scraper",
+		"default_title": "Cirrus Maximus",
 		"default_popup": "popup.html",
 		"default_icon": "images/icon-32.png"
 	},
