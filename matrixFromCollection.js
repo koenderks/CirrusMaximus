@@ -1,4 +1,4 @@
-function createAssessmentMatrix() {
+function matrixFromCollection() {
 	// Create a summary of the collection
 	var rows = document.getElementsByClassName('MuiDataGrid-row');
 	var numericCells = document.getElementsByClassName('MuiDataGrid-cellContent');
@@ -72,9 +72,9 @@ function createAssessmentMatrix() {
 	document.body.style.zoom = 1;
 }
 
-function main() {
+function runMatrixFromCollection() {
 	document.body.style.zoom = 0.1;
-	setTimeout(createAssessmentMatrix, 100);
+	setTimeout(matrixFromCollection, 100);
 }
 
-main()
+runMatrixFromCollection()

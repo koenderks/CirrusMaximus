@@ -1,4 +1,4 @@
-function extractData() {
+function dataFromCollection() {
 	// Create a summary of the collection
 	var rows = document.getElementsByClassName('MuiDataGrid-row');
 	var numericCells = document.getElementsByClassName('MuiDataGrid-cellContent');
@@ -29,9 +29,9 @@ function extractData() {
 	document.body.style.zoom = 1;
 }
 
-function main() {
+function runDataFromCollection() {
 	document.body.style.zoom = 0.1;
-	setTimeout(extractData, 100);
+	setTimeout(dataFromCollection, 100);
 }
 
-main()
+runDataFromCollection()
