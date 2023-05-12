@@ -1,5 +1,4 @@
 function runMatrixFromForm() {
-	// Create a summary of the collection
 	const numbers = document.getElementsByClassName("indexColumn-13-gt");
 	const titles = document.getElementsByClassName("questionHeader-2NdOd");
 	const ids = document.getElementsByClassName("idColumn-1yKKe");
@@ -7,11 +6,10 @@ function runMatrixFromForm() {
 	const scores = document.getElementsByClassName("scoreColumn-3msl5");
 	const LOs = document.getElementsByClassName("learningObjectivesColumn-1McrU");
 	const taxonomies = document.getElementsByClassName("taxonomiesColumn-1Qy6B");
-	if (numbers.length > 0 && titles.length > 0 && ids.length > 0 && types.length > 0 && scores.length > 0 && LOs.length > 0 && taxonomies.length > 0) {
-		const aggregated = [
-			['Number', 'Question', 'ID', 'Type', "Score", "Taxonomy", "Objective"]
-		];
-		for (var i = 0; i < titles.length; i++) {
+	const nrows = titles.length;
+	if (nrows > 0) {
+		const aggregated = [['Number', 'Question', 'ID', 'Type', "Score", "Taxonomy", "Objective"]];
+		for (var i = 0; i < nrows; i++) {
 			const row = [numbers[i].innerText, titles[i].innerText, ids[i].innerText, types[i].innerText, scores[i].innerText, LOs[i].innerText, taxonomies[i].innerText];
 			aggregated.push(row);
 		}
@@ -66,4 +64,4 @@ function runMatrixFromForm() {
 	}
 }
 
-runMatrixFromForm()
+runMatrixFromForm();

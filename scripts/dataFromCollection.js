@@ -34,4 +34,4 @@ function runDataFromCollection() {
 	setTimeout(dataFromCollection, 100);
 }
 
-runDataFromCollection()
+runDataFromCollection();

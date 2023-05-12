@@ -81,4 +81,4 @@ function runMatrixFromCollection() {
 	setTimeout(matrixFromCollection, 100);
 }
 
-runMatrixFromCollection()
+runMatrixFromCollection();
