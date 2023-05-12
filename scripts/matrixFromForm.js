@@ -10,10 +10,8 @@ function getMatrixFromForm() {
 			const row = [numbers[i].innerText, scores[i].innerText, taxonomies[i].innerText, LOs[i].innerText];
 			aggregated.push(row);
 		}
-		const asmat = [
-			["", '1. Remember', "", "2. Understand", "", "3. Apply", , "4. Analyze", "", "5. Evaluate", "", ""],
-			['LearningObjective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]
-		];
+		const asmat = [["", '1. Remember', "", "2. Understand", "", "3. Apply", , "4. Analyze", "", "5. Evaluate", "", ""],
+						['LearningObjective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]];
 		const learningObjectives = getUniqueElements(aggregated, 3);
 		for (objective of learningObjectives) {
 			asrow = [objective];

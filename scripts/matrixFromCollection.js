@@ -3,71 +3,65 @@ function matrixFromCollection() {
 	var rows = document.getElementsByClassName('MuiDataGrid-row');
 	var numericCells = document.getElementsByClassName('MuiDataGrid-cellContent');
 	var stringCells = document.getElementsByClassName('css-j7qwjs');
-	if (numericCells.length > 0 && rows.length > 0) {
+	if (numericCells.length > 0 && rows.length > 0 && stringCells.length > 0) {
 		const aggregated = [];
 		var numericIndex = 0;
 		var stringIndex = 0;
-		for (var i = 0; i < rows.length; i++) {
+		for (let i = 0; i < rows.length; i++) {
 			const row = [i + 1]
-			for (var j = 1; j < 5; j++) {
+			for (let j = 1; j < 5; j++) {
 				j > 1 ? row.push(numericCells[numericIndex].innerHTML) : row.push(numericCells[numericIndex].textContent);
 				numericIndex = numericIndex + 1;
 			}
-			if (stringCells.length > 0) {
-				var selected = stringCells.length / rows.length
-				for (var j = 0; j < selected; j++) {
-					row.push(stringCells[stringIndex].innerText);
-					stringIndex = stringIndex + 1;
-				}
+			var selected = stringCells.length / rows.length
+			for (let j = 0; j < selected; j++) {
+				row.push(stringCells[stringIndex].innerText);
+				stringIndex = stringIndex + 1;
 			}
 			aggregated.push(row);
 		}
 		// Create assessment matrix
-		const assmat = [
-			["", '1. Remember', "", "2. Understand", "", "3. Apply", , "4. Analyze", "", "5. Evaluate", "", ""],
-			['LearningObjective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]
-		];
-		for (var i = 0; i < learningObjectives.length; i++) {
-			assmatrow = [learningObjectives[i]];
-			for (var j = 0; j < 5; j++) {
+		const asmat = [["", '1. Remember', "", "2. Understand", "", "3. Apply", , "4. Analyze", "", "5. Evaluate", "", ""],
+		['LearningObjective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]];
+		const learningObjectives = getUniqueElements(aggregated, 5).filter(Boolean);
+		console.log(learningObjectives)
+		for (objective of learningObjectives) {
+			asrow = [objective];
+			for (let j = 0; j < 5; j++) {
 				const questions = aggregated.reduce((acc, curr) => {
-					if (curr[5] === learningObjectives[i] && curr[6] == assmat[0][(j * 2) + 1]) {
-						if (acc.length == 0) {
-							acc += curr[2];
-						} else {
-							acc += ", " + curr[2];
-						}
+					if (curr[5] === objective && curr[6] == asmat[0][(j * 2) + 1]) {
+						acc.push(curr[2])
 					}
 					return acc;
-				}, "");
+				}, []);
 				const points = aggregated.reduce((acc, curr) => {
-					if (curr[5] === learningObjectives[i] && curr[6] == assmat[0][(j * 2) + 1]) {
+					if (curr[5] === objective && curr[6] == asmat[0][(j * 2) + 1]) {
 						acc += parseInt(curr[4]);
 					}
 					return acc;
 				}, 0);
-				assmatrow.push(questions);
-				assmatrow.push(points);
+				asrow.push(questions.join(", "));
+				asrow.push(points);
 			}
-			assmatrow.push(0);
-			assmat.push(assmatrow);
+			asrow.push(0);
+			asmat.push(asrow);
 		}
 		// Compute the row totals
-		for (var i = 2; i < assmat.length; i++) {
-			assmat[i][11] = assmat[i][2] + assmat[i][4] + assmat[i][6] + assmat[i][8] + assmat[i][10];
+		for (let i = 2; i < asmat.length; i++) {
+			asmat[i][11] = asmat[i][2] + asmat[i][4] + asmat[i][6] + asmat[i][8] + asmat[i][10];
 		}
-		columnTotals = ["Total"];
-		for (var j = 0; j < 5; j++) {
+		ctotal = ["Total"];
+		for (let j = 0; j < 5; j++) {
 			var total = 0;
-			for (var i = 2; i < assmat.length; i++) {
-				total += parseInt(assmat[i][(j * 2) + 2]);
+			for (let i = 2; i < asmat.length; i++) {
+				total += parseInt(asmat[i][(j * 2) + 2]);
 			}
-			columnTotals.push("");
-			columnTotals.push(total);
+			ctotal.push("");
+			ctotal.push(total);
 		}
-		columnTotals.push(columnTotals[2] + columnTotals[4] + columnTotals[6] + columnTotals[8] + columnTotals[10])
-		assmat.push(columnTotals);
-		exportToCsv('CollectionAssessmentMatrix.csv', assmat);
+		ctotal.push(ctotal[2] + ctotal[4] + ctotal[6] + ctotal[8] + ctotal[10])
+		asmat.push(ctotal);
+		exportToCsv('CollectionAssessmentMatrix.csv', asmat);
 	}
 	document.body.style.zoom = 1;
 }
