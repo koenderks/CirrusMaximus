@@ -12,3 +12,11 @@
 
 ## Usage
 
+1. Pin the extension to your toolbar:
+<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme1.png'/>
+
+2. Go to the Cirrus website, navigate to a collection and click on the extension icon:
+<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme2.png'/>
+
+3. A `.csv` file will be downloaded to your pc.
+<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme3.png'/>
