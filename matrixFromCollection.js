@@ -36,7 +36,11 @@ function matrixFromCollection() {
 			for (var j = 0; j < 5; j++) {
 				const questions = aggregated.reduce((acc, curr) => {
 					if (curr[5] === learningObjectives[i] && curr[6] == assmat[0][(j * 2) + 1]) {
-						acc += ", " + curr[2];
+						if (acc.length == 0) {
+							acc += curr[2];
+						} else {
+							acc += ", " + curr[2];
+						}
 					}
 					return acc;
 				}, "");
