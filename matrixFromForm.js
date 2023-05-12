@@ -1,27 +1,18 @@
-function matrixFromCollection() {
+function matrixFromForm() {
 	// Create a summary of the collection
-	var rows = document.getElementsByClassName('MuiDataGrid-row');
-	var numericCells = document.getElementsByClassName('MuiDataGrid-cellContent');
-	var stringCells = document.getElementsByClassName('css-j7qwjs');
-	if (numericCells.length > 0 && rows.length > 0) {
+	const numbers = document.getElementsByClassName("indexColumn-13-gt");
+	const titles = document.getElementsByClassName("questionHeader-2NdOd");
+	const ids = document.getElementsByClassName("idColumn-1yKKe");
+	const types = document.getElementsByClassName("questionTypeColumn-36N7h");
+	const scores = document.getElementsByClassName("scoreColumn-3msl5");
+	const LOs = document.getElementsByClassName("learningObjectivesColumn-1McrU");
+	const taxonomies = document.getElementsByClassName("taxonomiesColumn-1Qy6B");
+	if (numbers.length > 0 && titles.length > 0 && ids.length > 0 && types.length > 0 && scores.length > 0 && LOs.length > 0 && taxonomies.length > 0) {
 		const aggregated = [
-			['Row', 'Question', 'ID', 'Type', "Points", "Taxonomy", "Objective"]
+			['Number', 'Question', 'ID', 'Type', "Score", "Taxonomy", "Objective"]
 		];
-		var numericIndex = 0;
-		var stringIndex = 0;
-		for (var i = 0; i < rows.length; i++) {
-			const row = [i + 1]
-			for (var j = 1; j < 5; j++) {
-				j > 1 ? row.push(numericCells[numericIndex].innerHTML) : row.push(numericCells[numericIndex].textContent);
-				numericIndex = numericIndex + 1;
-			}
-			if (stringCells.length > 0) {
-				var selected = stringCells.length / rows.length
-				for (var j = 0; j < selected; j++) {
-					row.push(stringCells[stringIndex].innerText);
-					stringIndex = stringIndex + 1;
-				}
-			}
+		for (var i = 0; i < titles.length; i++) {
+			const row = [numbers[i].innerText, titles[i].innerText, ids[i].innerText, types[i].innerText, scores[i].innerText, LOs[i].innerText, taxonomies[i].innerText];
 			aggregated.push(row);
 		}
 		// Create assessment matrix
@@ -30,13 +21,13 @@ function matrixFromCollection() {
 			['Objective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]
 		];
 		const learningObjectives = getUniqueElements(aggregated, 5);
-		learningObjectives.splice(0, 2);
+		learningObjectives.splice(0, 1);
 		for (var i = 0; i < learningObjectives.length; i++) {
 			assmatrow = [learningObjectives[i]];
 			for (var j = 0; j < 5; j++) {
 				const questions = aggregated.reduce((acc, curr) => {
 					if (curr[5] === learningObjectives[i] && curr[6] == assmat[0][(j * 2) + 1]) {
-						acc += ", " + curr[2];
+						acc += ", " + curr[0];
 					}
 					return acc;
 				}, "");
@@ -67,14 +58,14 @@ function matrixFromCollection() {
 		}
 		columnTotals.push(columnTotals[2] + columnTotals[4] + columnTotals[6] + columnTotals[8] + columnTotals[10])
 		assmat.push(columnTotals);
-		exportToCsv('CollectionAssessmentMatrix.csv', assmat);
+		exportToCsv('FormAssessmentMatrix.csv', assmat);
 	}
 	document.body.style.zoom = 1;
 }
 
-function runMatrixFromCollection() {
+function runMatrixFromForm() {
 	document.body.style.zoom = 0.1;
-	setTimeout(matrixFromCollection, 100);
+	setTimeout(matrixFromForm, 100);
 }
 
-runMatrixFromCollection()
+runMatrixFromForm()

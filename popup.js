@@ -26,7 +26,16 @@ injectMatrixFromCollectionScript = (tab) => {
 			files: ['common.js', 'matrixFromCollection.js']
 		}
 	)
-	console.log(`Loading: ${url}`);
+}
+
+injectMatrixFromFormScript = (tab) => {
+	const { id, url } = tab;
+	chrome.scripting.executeScript(
+		{
+			target: { tabId: id, allFrames: true },
+			files: ['common.js', 'matrixFromForm.js']
+		}
+	)
 }
 
 injectDataFromCollectionScript = (tab) => {
@@ -37,7 +46,6 @@ injectDataFromCollectionScript = (tab) => {
 			files: ['common.js', 'dataFromCollection.js']
 		}
 	)
-	console.log(`Loading: ${url}`);
 }
 
 injectDataFromFormScript = (tab) => {
@@ -48,7 +56,6 @@ injectDataFromFormScript = (tab) => {
 			files: ['common.js', 'dataFromForm.js']
 		}
 	)
-	console.log(`Loading: ${url}`);
 }
 
 getCurrentChromeTab = async () => {
@@ -63,6 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	collectionMatrixButton.addEventListener("click", () => {
 		getCurrentChromeTab().then((tab) => {
 			injectMatrixFromCollectionScript(tab)
+		})
+	});
+	// Inject script to create assessment matrix from form on click
+	const formMatrixButton = document.getElementById("formMatrixButton");
+	formMatrixButton.addEventListener("click", () => {
+		getCurrentChromeTab().then((tab) => {
+			injectMatrixFromFormScript(tab)
 		})
 	});
 	// Inject script to extract collection data on click
