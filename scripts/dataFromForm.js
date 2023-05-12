@@ -13,7 +13,8 @@ function getDataFromForm() {
 			const row = [numbers[i].innerText, titles[i].innerText, ids[i].innerText, types[i].innerText, scores[i].innerText, taxonomies[i].innerText, LOs[i].innerText];
 			aggregated.push(row);
 		}
-		exportToCsv('FormData.csv', aggregated);
+		const pagetitle = document.getElementsByClassName("page-title-Q91Bk")[0];
+		exportToCsv("Form_" + pagetitle.innerText, aggregated);
 	}
 }
 

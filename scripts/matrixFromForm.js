@@ -48,7 +48,8 @@ function getMatrixFromForm() {
 		}
 		ctotal.push(ctotal[2] + ctotal[4] + ctotal[6] + ctotal[8] + ctotal[10])
 		asmat.push(ctotal);
-		exportToCsv('FormAssessmentMatrix.csv', asmat);
+		const pagetitle = document.getElementsByClassName("page-title-Q91Bk")[0];
+		exportToCsv("AssessmentMatrix_" + pagetitle.innerText, asmat);
 	}
 }
 
