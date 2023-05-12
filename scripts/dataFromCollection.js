@@ -22,7 +22,8 @@ function dataFromCollection() {
 			}
 			aggregated.push(row);
 		}
-		exportToCsv('CollectionData.csv', aggregated);
+		const pagetitle = document.getElementsByClassName("page-title-Q91Bk")[0];
+		exportToCsv("Collection_" + pagetitle.innerText, aggregated);
 	}
 	document.body.style.zoom = 1;
 }

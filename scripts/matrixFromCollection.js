@@ -61,7 +61,8 @@ function matrixFromCollection() {
 		}
 		ctotal.push(ctotal[2] + ctotal[4] + ctotal[6] + ctotal[8] + ctotal[10])
 		asmat.push(ctotal);
-		exportToCsv('CollectionAssessmentMatrix.csv', asmat);
+		const pagetitle = document.getElementsByClassName("page-title-Q91Bk")[0];
+		exportToCsv("AssessmentMatrix_" + pagetitle.innerText, asmat);
 	}
 	document.body.style.zoom = 1;
 }
