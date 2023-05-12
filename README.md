@@ -6,15 +6,39 @@
 
 You can download the development version of **Cirrus Maximus** as follows:
 
-- Download this repo as a ZIP-file (see image below) and unzip on your computer.
-- Open your Chrome browser and navigate to `chrome://extensions`.
-- Enable Developer mode in the top-right corner and select `Load unpacked`.
-- Browse to the local folder that contains the extension's code and click `Ok`.
-- If there are no errors, the `Cirrus Maximus` extension will load automatically into your browser.
+1. Click the green `<> Code` button in the top-right and click `Download ZIP` (see image below). Next, unpack the folder somewhere on your computer.
 
 <p align="center">
-	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme0.png' width = "50%"/>
+	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme0.png' width = "25%"/>
 </p>
+
+### Browsers
+
+<details>
+<summary><b>Microsoft Edge</b></summary>
+
+2. Open your Chrome browser and navigate to `edge://extensions`.
+
+3. Enable Developer mode in the bottom-left corner and select `Load Unpacked`.
+
+4. Browse to the local folder that contains the extension's code and click `Select`.
+
+5. If there are no errors, the `Cirrus Maximus` extension will load automatically into your browser.
+
+</details>
+
+<details>
+<summary><b>Google Chrome</b></summary>
+
+2. Open your Chrome browser and navigate to `chrome://extensions`.
+
+3. Enable Developer mode in the top-right corner and select `Load unpacked`.
+
+4. Browse to the local folder that contains the extension's code and click `Select`.
+
+5. If there are no errors, the `Cirrus Maximus` extension will load automatically into your browser.
+
+</details>
 
 ## Usage
 
