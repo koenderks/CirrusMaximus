@@ -1,99 +1,80 @@
-function exportToCsv(filename, rows) {
-	const csvContent = rows.map(row => row.join(';')).join('\n');
-	const blob = new Blob([csvContent], { type: 'text/csv' });
-	const url = URL.createObjectURL(blob);
-
-	const link = document.createElement('a');
-	link.setAttribute('href', url);
-	link.setAttribute('download', filename);
-	link.click();
-}
-
-function getUniqueElements(arr, colIndex) {
-	const uniqueElements = new Set();
-	for (let i = 0; i < arr.length; i++) {
-		uniqueElements.add(arr[i][colIndex]);
-	}
-	return Array.from(uniqueElements);
-}
-
-function myCallback() {
+function createAssessmentMatrix() {
+	// Create a summary of the collection
 	var rows = document.getElementsByClassName('MuiDataGrid-row');
-	var elements = document.getElementsByClassName('MuiDataGrid-cellContent');
-	var spans = document.getElementsByClassName('css-j7qwjs');
-	if (elements.length > 0 && rows.length > 0) {
-		const cars = [
-			['Question', 'ID', 'Type', "Points", "Taxonomy", "Objective"]
+	var numericCells = document.getElementsByClassName('MuiDataGrid-cellContent');
+	var stringCells = document.getElementsByClassName('css-j7qwjs');
+	if (numericCells.length > 0 && rows.length > 0) {
+		const aggregated = [
+			['Row', 'Question', 'ID', 'Type', "Points", "Taxonomy", "Objective"]
 		];
-		var index = 0;
-		var spanindex = 0;
+		var numericIndex = 0;
+		var stringIndex = 0;
 		for (var i = 0; i < rows.length; i++) {
-			const arr = []
+			const row = [i + 1]
 			for (var j = 1; j < 5; j++) {
-				j > 1 ? arr.push(elements[index].innerHTML) : arr.push(elements[index].textContent);
-				index = index + 1;
+				j > 1 ? row.push(numericCells[numericIndex].innerHTML) : row.push(numericCells[numericIndex].textContent);
+				numericIndex = numericIndex + 1;
 			}
-			if (spans.length > 0) {
-				var selected = spans.length / rows.length
+			if (stringCells.length > 0) {
+				var selected = stringCells.length / rows.length
 				for (var j = 0; j < selected; j++) {
-					arr.push(spans[spanindex].innerText);
-					spanindex = spanindex + 1;
+					row.push(stringCells[stringIndex].innerText);
+					stringIndex = stringIndex + 1;
 				}
 			}
-			cars.push(arr);
+			aggregated.push(row);
 		}
-		// exportToCsv('Taxonomies.csv', cars);
-		const mat = [
+		// Create assessment matrix
+		const assmat = [
 			["", '1. Remember', "", "2. Understand", "", "3. Apply", , "4. Analyze", "", "5. Evaluate", "", ""],
 			['Objective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]
 		];
-		const LOs = getUniqueElements(cars, 4);
-		LOs.splice(0, 2);
-		for (var i = 0; i < LOs.length; i++) {
-			matarr = [LOs[i]];
+		const learningObjectives = getUniqueElements(aggregated, 5);
+		learningObjectives.splice(0, 2);
+		for (var i = 0; i < learningObjectives.length; i++) {
+			assmatrow = [learningObjectives[i]];
 			for (var j = 0; j < 5; j++) {
-				const qString = cars.reduce((acc, curr) => {
-					if (curr[4] === LOs[i] && curr[5] == mat[0][(j * 2) + 1]) {
-						acc += curr[1] + ", ";
+				const questions = aggregated.reduce((acc, curr) => {
+					if (curr[5] === learningObjectives[i] && curr[6] == assmat[0][(j * 2) + 1]) {
+						acc += curr[2] + ", ";
 					}
 					return acc;
 				}, "");
-				const pointsSum = cars.reduce((acc, curr) => {
-					if (curr[4] === LOs[i] && curr[5] == mat[0][(j * 2) + 1]) {
-						acc += parseInt(curr[3]);
+				const points = aggregated.reduce((acc, curr) => {
+					if (curr[5] === learningObjectives[i] && curr[6] == assmat[0][(j * 2) + 1]) {
+						acc += parseInt(curr[4]);
 					}
 					return acc;
 				}, 0);
-				matarr.push(qString);
-				matarr.push(pointsSum);
+				assmatrow.push(questions);
+				assmatrow.push(points);
 			}
-			matarr.push(0);
-			mat.push(matarr);
+			assmatrow.push(0);
+			assmat.push(assmatrow);
 		}
 		// Compute the row totals
-		for (var i = 2; i < mat.length; i++) {
-			const rowTotal = mat[i][2] + mat[i][4] + mat[i][6] + mat[i][8] + mat[i][10];
-			mat[i][11] = rowTotal;
+		for (var i = 2; i < assmat.length; i++) {
+			assmat[i][11] = assmat[i][2] + assmat[i][4] + assmat[i][6] + assmat[i][8] + assmat[i][10];
 		}
 		columnTotals = ["Total"];
-		for (let j = 0; j < 5; j++) {
-			var sum = 0;
-			for (var i = 2; i < mat.length; i++) {
-				sum += parseInt(mat[i][(j * 2) + 2]);
+		for (var j = 0; j < 5; j++) {
+			var total = 0;
+			for (var i = 2; i < assmat.length; i++) {
+				total += parseInt(assmat[i][(j * 2) + 2]);
 			}
 			columnTotals.push("");
-			columnTotals.push(sum);
+			columnTotals.push(total);
 		}
 		columnTotals.push(columnTotals[2] + columnTotals[4] + columnTotals[6] + columnTotals[8] + columnTotals[10])
-		mat.push(columnTotals);
-		exportToCsv('AssessmentMatrix.csv', mat);
+		assmat.push(columnTotals);
+		exportToCsv('AssessmentMatrix.csv', assmat);
 	}
 	document.body.style.zoom = 1;
 }
 
 function main() {
 	document.body.style.zoom = 0.1;
-	setTimeout(myCallback, 100);
+	setTimeout(createAssessmentMatrix, 100);
 }
 
 main()

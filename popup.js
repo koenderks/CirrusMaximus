@@ -3,7 +3,7 @@ injectAssessmentMatrixScript = (tab) => {
 	chrome.scripting.executeScript(
 		{
 			target: { tabId: id, allFrames: true },
-			files: ['assessmentMatrix.js']
+			files: ['common.js', 'assessmentMatrix.js']
 		}
 	)
 	console.log(`Loading: ${url}`);
@@ -14,7 +14,7 @@ injectDataExtractionScript = (tab) => {
 	chrome.scripting.executeScript(
 		{
 			target: { tabId: id, allFrames: true },
-			files: ['dataExtraction.js']
+			files: ['common.js', 'dataExtraction.js']
 		}
 	)
 	console.log(`Loading: ${url}`);
@@ -27,12 +27,14 @@ getCurrentTab = async () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+	// Inject script to create assessment matrix on click
 	const matrixButton = document.getElementById("matrixButton");
 	matrixButton.addEventListener("click", () => {
 		getCurrentTab().then((tab) => {
 			injectAssessmentMatrixScript(tab)
 		})
 	});
+	// Inject script to extract data on click
 	const dataButton = document.getElementById("dataButton");
 	dataButton.addEventListener("click", () => {
 		getCurrentTab().then((tab) => {

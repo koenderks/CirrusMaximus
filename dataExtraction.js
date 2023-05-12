@@ -1,55 +1,37 @@
-function exportToCsv(filename, rows) {
-	const csvContent = rows.map(row => row.join(';')).join('\n');
-	const blob = new Blob([csvContent], { type: 'text/csv' });
-	const url = URL.createObjectURL(blob);
-
-	const link = document.createElement('a');
-	link.setAttribute('href', url);
-	link.setAttribute('download', filename);
-	link.click();
-}
-
-function getUniqueElements(arr, colIndex) {
-	const uniqueElements = new Set();
-	for (let i = 0; i < arr.length; i++) {
-		uniqueElements.add(arr[i][colIndex]);
-	}
-	return Array.from(uniqueElements);
-}
-
-function myCallback() {
+function extractData() {
+	// Create a summary of the collection
 	var rows = document.getElementsByClassName('MuiDataGrid-row');
-	var elements = document.getElementsByClassName('MuiDataGrid-cellContent');
-	var spans = document.getElementsByClassName('css-j7qwjs');
-	if (elements.length > 0 && rows.length > 0) {
-		const cars = [
-			['Question', 'ID', 'Type', "Points", "Taxonomy", "Objective"]
+	var numericCells = document.getElementsByClassName('MuiDataGrid-cellContent');
+	var stringCells = document.getElementsByClassName('css-j7qwjs');
+	if (numericCells.length > 0 && rows.length > 0) {
+		const aggregated = [
+			['Row', 'Question', 'ID', 'Type', "Points", "Taxonomy", "Objective"]
 		];
-		var index = 0;
-		var spanindex = 0;
+		var numericIndex = 0;
+		var stringIndex = 0;
 		for (var i = 0; i < rows.length; i++) {
-			const arr = []
+			const row = [i + 1]
 			for (var j = 1; j < 5; j++) {
-				j > 1 ? arr.push(elements[index].innerHTML) : arr.push(elements[index].textContent);
-				index = index + 1;
+				j > 1 ? row.push(numericCells[numericIndex].innerHTML) : row.push(numericCells[numericIndex].textContent);
+				numericIndex = numericIndex + 1;
 			}
-			if (spans.length > 0) {
-				var selected = spans.length / rows.length
+			if (stringCells.length > 0) {
+				var selected = stringCells.length / rows.length
 				for (var j = 0; j < selected; j++) {
-					arr.push(spans[spanindex].innerText);
-					spanindex = spanindex + 1;
+					row.push(stringCells[stringIndex].innerText);
+					stringIndex = stringIndex + 1;
 				}
 			}
-			cars.push(arr);
+			aggregated.push(row);
 		}
-		exportToCsv('Collection.csv', cars);
+		exportToCsv('Collection.csv', aggregated);
 	}
 	document.body.style.zoom = 1;
 }
 
 function main() {
 	document.body.style.zoom = 0.1;
-	setTimeout(myCallback, 100);
+	setTimeout(extractData, 100);
 }
 
 main()
