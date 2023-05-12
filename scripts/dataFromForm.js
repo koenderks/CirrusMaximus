@@ -8,9 +8,9 @@ function getDataFromForm() {
 	const taxonomies = document.getElementsByClassName("taxonomiesColumn-1Qy6B");
 	const nrows = titles.length;
 	if (nrows > 0) {
-		const aggregated = [['Number', 'Question', 'ID', 'Type', "Score", "Taxonomy", "Objective"]];
-		for (var i = 0; i < nrows; i++) {
-			const row = [numbers[i].innerText, titles[i].innerText, ids[i].innerText, types[i].innerText, scores[i].innerText, LOs[i].innerText, taxonomies[i].innerText];
+		const aggregated = [['Question', 'Title', 'ID', 'Type', "Score", "Taxonomy", "LearningObjective"]];
+		for (let i = 0; i < nrows; i++) {
+			const row = [numbers[i].innerText, titles[i].innerText, ids[i].innerText, types[i].innerText, scores[i].innerText, taxonomies[i].innerText, LOs[i].innerText];
 			aggregated.push(row);
 		}
 		exportToCsv('FormData.csv', aggregated);

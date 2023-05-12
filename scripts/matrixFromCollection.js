@@ -4,9 +4,7 @@ function matrixFromCollection() {
 	var numericCells = document.getElementsByClassName('MuiDataGrid-cellContent');
 	var stringCells = document.getElementsByClassName('css-j7qwjs');
 	if (numericCells.length > 0 && rows.length > 0) {
-		const aggregated = [
-			['Row', 'Question', 'ID', 'Type', "Points", "Taxonomy", "Objective"]
-		];
+		const aggregated = [];
 		var numericIndex = 0;
 		var stringIndex = 0;
 		for (var i = 0; i < rows.length; i++) {
@@ -27,10 +25,8 @@ function matrixFromCollection() {
 		// Create assessment matrix
 		const assmat = [
 			["", '1. Remember', "", "2. Understand", "", "3. Apply", , "4. Analyze", "", "5. Evaluate", "", ""],
-			['Objective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]
+			['LearningObjective', 'Questions', 'Points', "Questions", "Points", "Questions", "Points", "Questions", "Points", "Questions", "Points", "Total"]
 		];
-		const learningObjectives = getUniqueElements(aggregated, 5);
-		learningObjectives.splice(0, 2);
 		for (var i = 0; i < learningObjectives.length; i++) {
 			assmatrow = [learningObjectives[i]];
 			for (var j = 0; j < 5; j++) {
