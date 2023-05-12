@@ -7,6 +7,12 @@ function getMatrixFromForm() {
 	if (nrows > 0) {
 		const aggregated = [];
 		for (let i = 0; i < nrows; i++) {
+			// Add a conditional statement to check if any of the values in the row is empty
+			if (numbers[i].innerText === "" || scores[i].innerText === "" || LOs[i].innerText === "" || taxonomies[i].innerText === "") {
+				// Display an alert and return to stop the computations
+				alert("One or more taxonomy or learning objective field is empty. Please fill all the fields via your collection.");
+				return;
+			}
 			const row = [numbers[i].innerText, scores[i].innerText, taxonomies[i].innerText, LOs[i].innerText];
 			aggregated.push(row);
 		}
