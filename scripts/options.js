@@ -6,9 +6,6 @@ const saveOptions = () => {
 	chrome.storage.sync.set(
 		{ separator: sep, language: lan },
 		() => {
-			// Update status to let user know options were saved.
-			const status = document.getElementById('status');
-			lan == "en" ? status.textContent = 'Options saved.' : status.textContent = 'Opties opgeslagen.';
 			if (lan == "en") {
 				document.getElementById("label-title").innerHTML = "<b>Preferences</b>"
 				document.getElementById("label-language").innerHTML = "<b>Language:</b>"
@@ -24,6 +21,9 @@ const saveOptions = () => {
 				document.getElementById("label-separator").innerHTML = "<b>CSV scheidingsteken:</b>"
 				document.getElementById("save").innerHTML = "Opslaan"
 			}
+			// Update status to let user know options were saved.
+			const status = document.getElementById('status');
+			lan == "en" ? status.textContent = 'Options saved.' : status.textContent = 'Opties opgeslagen.';
 			setTimeout(() => {
 				status.textContent = '';
 			}, 750);
@@ -39,6 +39,21 @@ const restoreOptions = () => {
 		(items) => {
 			document.getElementById('separator').value = items.separator;
 			document.getElementById('language').value = items.language;
+			if (items.language == "en") {
+				document.getElementById("label-title").innerHTML = "<b>Preferences</b>"
+				document.getElementById("label-language").innerHTML = "<b>Language:</b>"
+				document.getElementById("label-english").innerHTML = "English"
+				document.getElementById("label-dutch").innerHTML = "Dutch"
+				document.getElementById("label-separator").innerHTML = "<b>CSV delimiter:</b>"
+				document.getElementById("save").innerHTML = "Save"
+			} else {
+				document.getElementById("label-title").innerHTML = "<b>Voorkeuren</b>"
+				document.getElementById("label-language").innerHTML = "<b>Taal:</b>"
+				document.getElementById("label-english").innerHTML = "Engels"
+				document.getElementById("label-dutch").innerHTML = "Nederlands"
+				document.getElementById("label-separator").innerHTML = "<b>CSV scheidingsteken:</b>"
+				document.getElementById("save").innerHTML = "Opslaan"
+			}
 		}
 	);
 };

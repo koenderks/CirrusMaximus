@@ -1,17 +1,20 @@
 // Check the current url and hide elements accordingly
 chrome.tabs.query({ active: true, lastFocusedWindow: true }, async (tabs) => {
-	const currentUrl = tabs[0].url;
-	const par = document.getElementById("status");
-	if (currentUrl.includes("cirrusplatform.com/author/app#/library/collections/")) {
-		par.innerHTML = `Status: <b style='color: green;'>Active</b>`;
-		hideButtonsByClass("form-button");
-	} else if (currentUrl.includes("cirrusplatform.com/author/app#/assessments/item/")) {
-		par.innerHTML = `Status: <b style='color: green;'>Active</b>`;
-		hideButtonsByClass("collection-button");
-	} else {
-		hideButtonsByClass("collection-button");
-		hideButtonsByClass("form-button");
-	}
+	chrome.storage.sync.get({ language: "en" }, (items) => {
+		const language = items.language;
+		const currentUrl = tabs[0].url;
+		const par = document.getElementById("status");
+		if (currentUrl.includes("cirrusplatform.com/author/app#/library/collections/")) {
+			language == "en" ? par.innerHTML = `Status: <b style='color: green;'>Active</b>` : par.innerHTML = `Status: <b style='color: green;'>Actief</b>`;
+			hideButtonsByClass("form-button");
+		} else if (currentUrl.includes("cirrusplatform.com/author/app#/assessments/item/")) {
+			language == "en" ? par.innerHTML = `Status: <b style='color: green;'>Active</b>` : par.innerHTML = `Status: <b style='color: green;'>Actief</b>`;
+			hideButtonsByClass("collection-button");
+		} else {
+			hideButtonsByClass("collection-button");
+			hideButtonsByClass("form-button");
+		}
+	});
 });
 
 const hideButtonsByClass = (className) => {
@@ -38,6 +41,23 @@ document.querySelector('#options-button').addEventListener('click', function () 
 		chrome.runtime.openOptionsPage();
 	} else {
 		window.open(chrome.runtime.getURL('./html/options.html'));
+	}
+});
+
+chrome.storage.sync.get({ language: "en" }, (items) => {
+	const language = items.language;
+	if (language == "en") {
+		document.getElementById("status").innerHTML = "Status: <b>Inactive</b>"
+		document.getElementById("collectionDataButton").innerHTML = "Export collection"
+		document.getElementById("collectionMatrixButton").innerHTML = "Export assessment matrix"
+		document.getElementById("formDataButton").innerHTML = "Export form"
+		document.getElementById("formMatrixButton").innerHTML = "Export assessment matrix"
+	} else {
+		document.getElementById("status").innerHTML = "Status: <b>Niet actief</b>"
+		document.getElementById("collectionDataButton").innerHTML = "Exporteer collectie"
+		document.getElementById("collectionMatrixButton").innerHTML = "Exporteer toetsmatrijs"
+		document.getElementById("formDataButton").innerHTML = "Exporteer toets"
+		document.getElementById("formMatrixButton").innerHTML = "Exporteer toetsmatrijs"
 	}
 });
 
