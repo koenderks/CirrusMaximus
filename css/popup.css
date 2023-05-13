@@ -1,3 +1,7 @@
+body {
+	width: 140px;
+}
+
 .header {
 	display: flex;
 	align-items: center;
@@ -9,15 +13,24 @@
 	height: 32px;
 }
 
-.hidden {
-	display: none;
+.options-button {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+	background: url(../images/gear-32.png);
+	background-size: cover;
+	background-color: #000000;
 }
 
-body {
-	width: 140px;
+.options-button:hover {
+	background-color: #d77039;
 }
 
-button {
+.collection-button,
+.form-button {
 	display: block;
 	width: 140px;
 	margin-bottom: 5px;
@@ -26,7 +39,7 @@ button {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	border-radius: 10px;
-	border: 0px solid #000000;
+	border: none;
 	background-color: #e3e3e3;
 	color: #000000;
 	cursor: pointer;
@@ -34,7 +47,12 @@ button {
 	text-align: center;
 }
 
-button:hover {
+.collection-button:hover,
+.form-button:hover {
 	background-color: #d77039;
 	color: #ffffff;
+}
+
+.hidden {
+	display: none;
 }
