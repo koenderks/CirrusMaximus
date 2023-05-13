@@ -1,5 +1,9 @@
-.option-input {
-	width: 50px;
+#language {
+	width: 100px;
+}
+
+#separator {
+	width: 75px;
 }
 
 #save {

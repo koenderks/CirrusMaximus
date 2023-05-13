@@ -6,12 +6,22 @@
 </head>
 
 <body>
-	<h2><b>Preferences</b></h2>
-	<label for="separator"><b>CSV delimiter:</b></label>
-	<select class="option-input" id="separator">
-		<option value=";" selected>;</option>
-		<option value=",">,</option>
-	</select>
+	<h2 id="label-title"><b>Preferences</b></h2>
+	<div>
+		<label for="language" id="label-language"><b>Language:</b></label>
+		<select id="language">
+			<option value="en" id="label-english" selected>English</option>
+			<option value="nl" id="label-dutch">Dutch</option>
+		</select>
+	</div>
+	<br>
+	<div>
+		<label for="separator" id="label-separator"><b>CSV delimiter:</b></label>
+		<select id="separator">
+			<option value=";" selected>;</option>
+			<option value=",">,</option>
+		</select>
+	</div>
 	<div id="status"></div>
 	<br>
 	<button id="save">Save</button>
