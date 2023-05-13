@@ -23,6 +23,7 @@ body {
 	background: url(../images/gear-32.png);
 	background-size: cover;
 	background-color: #ffffff;
+	transition: all 0.3s ease-in-out;
 }
 
 .options-button:hover {
