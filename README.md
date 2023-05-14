@@ -1,10 +1,10 @@
 # Cirrus Maximus <img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/icon.svg' width='149' height='173' align='right'/>
 
-**Cirrus Maximus** is a browser extension that allows you to scrape and export data from the [Cirrus](https://cirrusassessment.com) online assessment platform.
+**Cirrus Maximus** is an extension for your web browser that enables scraping and exporting data from the [Cirrus](https://cirrusassessment.com) online assessment platform. With this extension enabled, users get options to export data in convenient formats, such as a file containing the data underlying all questions in an assessment or a file containing an assessment matrix that categorizes the questions into taxonomies based on learning objectives.
 
 ## Installation
 
-You can download **Cirrus Maximus** as follows:
+To download and install Cirrus Maximus for use in your browser, please follow the steps below.
 
 1. Click the green `<> Code` button in the top-right of this page and click `Download ZIP` (see image below). Next, unpack the folder somewhere on your computer.
 
@@ -12,35 +12,17 @@ You can download **Cirrus Maximus** as follows:
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme0.png' width = "25%"/>
 </p>
 
-See the sections below for the next steps depending on your browser.
+2. Open your web browser and navigate to `edge://extensions` (Microsoft Edge) or `chrome://extensions` (Google Chrome).
 
-<details>
-<summary><b>Microsoft Edge</b></summary>
-
-2. Open your Edge browser and navigate to `edge://extensions`.
-
-3. Enable Developer mode in the bottom-left corner and select `Load Unpacked`.
+3. Enable Developer mode and select `Load unpacked`.
 
 4. Browse to the local folder that contains the extension's code and click `Select`.
 
-5. If there are no errors, the `Cirrus Maximus` extension will load automatically into your browser.
-
-</details>
-
-<details>
-<summary><b>Google Chrome</b></summary>
-
-2. Open your Chrome browser and navigate to `chrome://extensions`.
-
-3. Enable Developer mode in the top-right corner and select `Load unpacked`.
-
-4. Browse to the local folder that contains the extension's code and click `Select`.
-
-5. If there are no errors, the `Cirrus Maximus` extension will load automatically into your browser.
-
-</details>
+5. If there are no errors, the Cirrus Maximus extension will load automatically into your browser.
 
 ## Usage
+
+To use Cirrus Maximus in your browser, please follow the steps below.
 
 1. Pin the extension to your browser's toolbar by clicking on the extension icon.
 
