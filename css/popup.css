@@ -31,7 +31,16 @@ body {
 }
 
 .options-button:hover {
-	background-color: #d77039;
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+	background: url(../images/gear-32-hover.png);
+	background-size: cover;
+	background-color: #ffffff;
+	transition: all 0.3s ease-in-out;
 }
 
 .collection-button,
