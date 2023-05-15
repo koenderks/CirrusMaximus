@@ -32,13 +32,13 @@ To use Cirrus Maximus in your browser, please follow the steps below.
 
 2. Go to the Cirrus website, log in, and navigate to an existing form or collection. The recommended approach is to go into a form, as it ensures that the overview or assessment matrix is generated with the latest information once the test is finalized.
 
-3. Click on the Cirrus Maximus icon in your toolbar. Via the options you can set the language of the interface to Dutch and change the csv delimiter. The two buttons allow you to export the formatted form or collection data or export the assessment matrix.
+3. Click on the Cirrus Maximus icon in your toolbar. Via the options you can set the language of the interface to Dutch and change the csv delimiter. The two buttons allow you to export the form or collection overview or export the assessment matrix.
 
 <p align="center">
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme2.png' width = "50%"/>
 </p>
 
-4. Upon clicking on one of the two buttons, a `.csv` file will be downloaded to your computer, containing the formatted form or collection data or the assessment matrix. You can then view this file in your editor (e.g., Microsoft Excel) of your choice. The example output below is generated using the `Export assessment matrix` option.
+4. Upon clicking on one of the two buttons, a `.csv` file will be downloaded to your computer, containing the form or collection overview or the assessment matrix. You can then view this file in your editor (e.g., Microsoft Excel) of your choice. The example output below is generated using the `Export assessment matrix` option.
 
 <p align="center">
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme3.png' width = "100%"/>
