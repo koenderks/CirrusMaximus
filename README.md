@@ -38,7 +38,7 @@ To use Cirrus Maximus in your browser, please follow the steps below.
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme2.png' width = "50%"/>
 </p>
 
-4. Upon clicking on one of the two buttons, a `.csv` file will be downloaded to your computer, containing the form or collection overview or the assessment matrix. You can then view this file in your editor (e.g., Microsoft Excel) of your choice. The example output below is generated using the `Export assessment matrix` option.
+4. Upon clicking on one of the two buttons, a `.csv` file will be downloaded to your computer, containing the form or collection overview or the assessment matrix. You can then view this file in your editor (e.g., Microsoft Excel) of your choice, but depending on your settings for the csv delimiter you might need to use the `Text to columns` option to view the output in separate cells. The example output below is generated using the `Export assessment matrix` option.
 
 <p align="center">
 	<img src='https://github.com/koenderks/CirrusMaximus/raw/development/images/readme3.png' width = "100%"/>
