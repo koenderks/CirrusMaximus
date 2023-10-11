@@ -1,8 +1,8 @@
 function getMatrixFromForm() {
-	const numbers = document.getElementsByClassName("indexColumn-13-gt");
-	const scores = document.getElementsByClassName("scoreColumn-3msl5");
-	const LOs = document.getElementsByClassName("learningObjectivesColumn-1McrU");
-	const taxonomies = document.getElementsByClassName("taxonomiesColumn-1Qy6B");
+	const numbers = document.getElementsByClassName("indexColumn-YnfpO");
+	const scores = document.getElementsByClassName("scoreColumn-7meJJ");
+	const LOs = document.getElementsByClassName("learningObjectivesColumn-zoTY6");
+	const taxonomies = document.getElementsByClassName("taxonomiesColumn-oHsaS");
 	const nrows = numbers.length;
 	if (nrows > 0) {
 		const aggregated = [];
@@ -54,7 +54,7 @@ function getMatrixFromForm() {
 		}
 		ctotal.push(ctotal[2] + ctotal[4] + ctotal[6] + ctotal[8] + ctotal[10])
 		asmat.push(ctotal);
-		const pagetitle = document.getElementsByClassName("page-title-Q91Bk")[0];
+		const pagetitle = document.getElementsByClassName("page-title-0dK5X")[0];
 		exportToCsv("AssessmentMatrix_" + pagetitle.innerText, asmat);
 	}
 }
